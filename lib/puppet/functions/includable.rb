@@ -4,7 +4,7 @@
 # the class file exists. The intended usage of this is to allow lazy creation of role classes:
 #
 #   $pp_role = $trusted['extensions']['pp_role']
-#   if $includable($pp_role) {
+#   if includable($pp_role) {
 #     include $pp_role
 #   } else {
 #     warning("Class $pp_role was not found - falling back to role::base")
