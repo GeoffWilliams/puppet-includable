@@ -8,10 +8,6 @@
   "project_page": null,
   "issues_url": "https://api.github.com/repos/GeoffWilliams/puppet-includable/issues{/number}",
   "dependencies": [
-    {
-      "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 1.0.0"
-    }
   ],
   "data_provider": null,
   "project_url": "https://github.com/GeoffWilliams/puppet-includable.git"

@@ -14,7 +14,26 @@
 Provide the `includable()` function to test whether a class has been written and is in the path or not
 
 ## Usage
-See reference and examples
+
+### includable()
+
+Test whether the class definition for the passed in class name is exists in the environment currently
+being evaluated.
+
+For example, given:
+
+```
+/etc/puppetlabs/code/environments/production/modules/mock_profile/
+└── manifests
+    └── myprofile.pp
+
+
+includable('mock_profile::myprofile') # true
+includable('mock_profile::not_here') # false 
+```
+
+Classes will be resolved according the `modulepath` for the current environment according to Puppet. See function 
+source code for exact implementation details
 
 ## Reference
 [generated documentation](https://rawgit.com/GeoffWilliams/puppet-includable/master/doc/index.html).
