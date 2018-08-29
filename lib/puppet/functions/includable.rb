@@ -1,8 +1,9 @@
-# includable()
+# @summary Test if a puppet class file exists and can be included
 #
-# Function to detect wheter it is possible to include a given puppet class or not based on whether
+# Function to detect whether it is possible to include a given puppet class or not based on whether
 # the class file exists. The intended usage of this is to allow lazy creation of role classes:
 #
+# @example Calling the function
 #   $pp_role = $trusted['extensions']['pp_role']
 #   if includable($pp_role) {
 #     include $pp_role
@@ -10,7 +11,6 @@
 #     warning("Class $pp_role was not found - falling back to role::base")
 #     include role::base
 #   }
-#
 # The reason for this is that Puppet deployers may want to assign roles to particular nodes without
 # _immediately_ having to create the associated role class. This removes the need for up-front
 # work creating role classes that are _TODO_ and the need to regenerate certificates once a suitable
@@ -23,16 +23,13 @@
 # a string and attempt to match a regular expression defining the class inside it. If this matches the
 # intention of the user was _probably_ to write a class, although we make no claims as to its validity
 # and subsequent inclusion will fail if there are syntax errors.
-#
-# @example Testing whether a class is defined in a file or not
-#   $foo = includable("role::base")
-#   # $foo is true if `role::base` _file_ exists in the current environment
-#
 Puppet::Functions.create_function(:'includable') do
-
   # @param classname Name of the class to test for incudability (existance as a file on the master)
   # @return true if `include classname` should succeed, otherwise false if the class is missing from
   #   the filesystem
+  # @example Testing whether a class is defined in a file or not
+  #   $foo = includable("role::base")
+  #   # $foo is true if `role::base` _file_ exists in the current environment
   dispatch :includable do
     param 'String', :classname
   end

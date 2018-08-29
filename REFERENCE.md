@@ -5,7 +5,7 @@
 
 **Functions**
 
-* [`includable`](#includable): includable()  Function to detect wheter it is possible to include a given puppet class or not based on whether the class file exists. The int
+* [`includable`](#includable): Test if a puppet class file exists and can be included
 
 ## Functions
 
@@ -13,18 +13,8 @@
 
 Type: Ruby 4.x API
 
-includable()
-
-Function to detect wheter it is possible to include a given puppet class or not based on whether
+Function to detect whether it is possible to include a given puppet class or not based on whether
 the class file exists. The intended usage of this is to allow lazy creation of role classes:
-
-  $pp_role = $trusted['extensions']['pp_role']
-  if includable($pp_role) {
-    include $pp_role
-  } else {
-    warning("Class $pp_role was not found - falling back to role::base")
-    include role::base
-  }
 
 The reason for this is that Puppet deployers may want to assign roles to particular nodes without
 _immediately_ having to create the associated role class. This removes the need for up-front
@@ -41,18 +31,8 @@ and subsequent inclusion will fail if there are syntax errors.
 
 #### `includable(String $classname)`
 
-includable()
-
-Function to detect wheter it is possible to include a given puppet class or not based on whether
+Function to detect whether it is possible to include a given puppet class or not based on whether
 the class file exists. The intended usage of this is to allow lazy creation of role classes:
-
-  $pp_role = $trusted['extensions']['pp_role']
-  if includable($pp_role) {
-    include $pp_role
-  } else {
-    warning("Class $pp_role was not found - falling back to role::base")
-    include role::base
-  }
 
 The reason for this is that Puppet deployers may want to assign roles to particular nodes without
 _immediately_ having to create the associated role class. This removes the need for up-front
