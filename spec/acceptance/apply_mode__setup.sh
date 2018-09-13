@@ -12,3 +12,5 @@ class mock_profile::myprofile() {
     content => "this file should not exist - class was evaluated"
 }
 END
+
+rm -f /etc/puppetlabs/code/environments/production/environment.conf

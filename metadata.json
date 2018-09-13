@@ -1,6 +1,6 @@
 {
   "name": "geoffwilliams-includable",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "geoffwilliams",
   "summary": "Provide the `includable()` function to test whether a class has been written and is in the path or not",
   "license": "Apache-2.0",

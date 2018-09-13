@@ -21,7 +21,7 @@ _immediately_ having to create the associated role class. This removes the need 
 work creating role classes that are _TODO_ and the need to regenerate certificates once a suitable
 role class becomes available.
 
-Function expects code to be found at /etc/puppetlabs/code/environments and is environment aware. There
+Function is environment aware. There
 is an undocumented private API for puppet which could be used to hook into Puppet internals and test
 for class existance, however this API is subject to change without notice and this would entirely
 break classification if used as the example above suggests. Instead, we convert the class name into
@@ -39,7 +39,7 @@ _immediately_ having to create the associated role class. This removes the need 
 work creating role classes that are _TODO_ and the need to regenerate certificates once a suitable
 role class becomes available.
 
-Function expects code to be found at /etc/puppetlabs/code/environments and is environment aware. There
+Function is environment aware. There
 is an undocumented private API for puppet which could be used to hook into Puppet internals and test
 for class existance, however this API is subject to change without notice and this would entirely
 break classification if used as the example above suggests. Instead, we convert the class name into
